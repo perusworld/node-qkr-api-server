@@ -1,4 +1,5 @@
-# Node.js TypeScript Express - Base #
+# Simple Server to front Mastercard Qkr! APIs #
+You could use this to host your backend services that talk to Mastercard Qkr! APIs
 
 ### NOTE: needs the following for now on heroku ###
 ```bash
