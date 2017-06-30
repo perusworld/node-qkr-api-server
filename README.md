@@ -1,6 +1,7 @@
 # Simple Server to front Mastercard Qkr! APIs #
 You could use this to host your backend services that can house calls to Mastercard Qkr! APIs.
-If you are looking to call Qkr! APIs then head over to [node-qkr-api](https://github.com/perusworld/node-qkr-api)
+
+If you are looking to call Qkr! APIs directly then head over to [node-qkr-api](https://github.com/perusworld/node-qkr-api)
 
 You can add your API call authentication logic in api.ts marked by
 ```javascript
