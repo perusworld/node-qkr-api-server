@@ -8,11 +8,6 @@ You can add your API call authentication logic in [api.ts](./src/api.ts) marked 
 //TODO: Your API Request Authentication Logic
 ```
 
-## NOTE: needs the following for now on heroku ##
-```bash
-heroku config:set NPM_CONFIG_PRODUCTION=false
-```
-
 ## Run ##
 - Bash
 ```bash
@@ -27,6 +22,15 @@ $env:QKR_PUBLIC_KEY="---qkr-public-key---"
 $env:QKR_PRIVATE_KEY="---qkr-private-key---"
 $env:QKR_URL="---qkr-sandbox-or-production-url---"
 npm run build ; npm start
+```
+-Heroku
+```bash
+heroku create yourappserver
+heroku config:set NPM_CONFIG_PRODUCTION=false
+heroku config:set QKR_PUBLIC_KEY="---qkr-public-key---"
+heroku config:set QKR_PRIVATE_KEY="---qkr-private-key---"
+heroku config:set QKR_URL="---qkr-sandbox-or-production-url---"
+git push heroku master
 ```
 
 ## Test Calls (the [test](./test) folder contains sample test calls as well) ##
