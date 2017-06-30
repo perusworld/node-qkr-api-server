@@ -3,7 +3,7 @@ You could use this to host your backend services that can house calls to Masterc
 
 If you are looking to call Qkr! APIs directly then head over to [node-qkr-api](https://github.com/perusworld/node-qkr-api)
 
-You can add your API call authentication logic in api.ts marked by
+You can add your API call authentication logic in [api.ts](./src/api.ts) marked by
 ```javascript
 //TODO: Your API Request Authentication Logic
 ```
