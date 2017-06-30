@@ -3,6 +3,7 @@ import * as express from "express";
 import * as path from "path";
 
 import { APIRoute } from "./api";
+import { QKRApi } from "node-qkr-api";
 
 /**
  * The server.
@@ -49,10 +50,16 @@ export class Server {
    * @method api
    */
   public api() {
-    let router: express.Router;
-    router = express.Router();
 
-    APIRoute.create(router);
+    let qkrApi = new QKRApi({
+        publicKey: process.env.QKR_PUBLIC_KEY,
+        privateKey: process.env.QKR_PRIVATE_KEY,
+        urlPrefix: process.env.QKR_URL
+    });
+
+    let router = express.Router();
+    let apiRoutes = new APIRoute(qkrApi);
+    apiRoutes.buildRoutes(router);
     this.app.use('/api/v1', router);
   }
 
