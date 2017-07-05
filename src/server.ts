@@ -1,6 +1,7 @@
 import * as bodyParser from "body-parser";
 import * as express from "express";
 import * as path from "path";
+import * as cors from "cors";
 
 import { APIRoute } from "./api";
 import { QKRApi } from "node-qkr-api";
@@ -70,6 +71,9 @@ export class Server {
    * @method config
    */
   public config() {
+    //add cors all
+    this.app.use(cors());
+
     //add static paths
     this.app.use(express.static(path.join(__dirname, "public")));
 
