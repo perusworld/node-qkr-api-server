@@ -93,6 +93,30 @@ export class APIRoute {
     });
   }
 
+  public getAddresses(req: Request, res: Response, next: NextFunction) {
+    this.qkrApi.getAddresses({
+      accessToken: {
+        token: req.body.token
+      }
+    }).then(resp => {
+      res.json(resp);
+    }).catch(err => {
+      res.json(err);
+    });
+  }
+
+  public addAddress(req: Request, res: Response, next: NextFunction) {
+    this.qkrApi.addAddress({
+      accessToken: {
+        token: req.body.token
+      }
+    }, req.body.request).then(resp => {
+      res.json(resp);
+    }).catch(err => {
+      res.json(err);
+    });
+  }
+
   /**
    * buildRoutes
    */
@@ -112,6 +136,8 @@ export class APIRoute {
     router.post("/card/list", this.getCards.bind(this));
     router.post("/merchant/list", this.getMerchants.bind(this));
     router.post("/product/list", this.getProducts.bind(this));
+    router.post("/address/list", this.getAddresses.bind(this));
+    router.post("/address/add", this.addAddress.bind(this));
 
   }
 

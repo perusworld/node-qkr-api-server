@@ -96,3 +96,11 @@ curl --request POST \
   --header 'content-type: application/json' \
   --data '{"token": "logintoken","request":{"amountMinorUnits": "200","cardId": "1","cartId": "1","tipAmount": 0}}'
 ```
+### Address List ###
+```bash
+curl --request POST \
+  --url http://localhost:3000/api/v1/address/list \
+  --header 'cache-control: no-cache' \
+  --header 'content-type: application/json' \
+  --data '{"token": "logintoken"}'
+```
