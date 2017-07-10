@@ -36,7 +36,7 @@ describe('checkout', () => {
                 }
             });
         }).then(resp => {
-            console.log('Products', resp);
+            console.log('Products', JSON.stringify(resp, null, 2));
             ctx.products = resp;
             return req.send({
                 endpoint: 'cart/add',
