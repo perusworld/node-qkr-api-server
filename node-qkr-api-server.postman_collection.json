@@ -1,0 +1,171 @@
+{
+	"variables": [],
+	"info": {
+		"name": "node-qkr-api-server",
+		"_postman_id": "0a0e560d-449e-a228-d811-64bd928aba52",
+		"description": "node-qkr-api-server sample postman calls collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"url": "http://localhost:3000/api/v1/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"someemail@somedomain.com\",\"pwd\":\"somepassword99\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Merchant List",
+			"request": {
+				"url": "http://localhost:3000/api/v1/merchant/list",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Product List",
+			"request": {
+				"url": "http://localhost:3000/api/v1/product/list",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":\"155952\"}"
+				},
+				"description": "Menu Details"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Cart",
+			"request": {
+				"url": "http://localhost:3000/api/v1/cart/add",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\": \"---your-auth-token---\",\"request\":{\"locatedScanId\": \"155955\",\"outletId\": \"155942\",\"purchaseNote\": \"Some note\",\"quantity\": 1,\"variantId\": \"155954\"}}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Cart List",
+			"request": {
+				"url": "http://localhost:3000/api/v1/cart/list",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\": \"---your-auth-token---\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Card List",
+			"request": {
+				"url": "http://localhost:3000/api/v1/card/list",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\": \"---your-auth-token---\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Cart Checkout",
+			"request": {
+				"url": "http://localhost:3000/api/v1/cart/checkout",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\": \"---your-auth-token---\",\"request\":{\"amountMinorUnits\": \"200\",\"cardId\": \"c0b37d63-4c2b-4677-a956-522761914ee1\",\"cartId\": \"162627\",\"tipAmount\": 0}}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Address List",
+			"request": {
+				"url": "http://localhost:3000/api/v1/address/list",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\": \"---your-auth-token---\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

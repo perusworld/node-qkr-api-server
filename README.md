@@ -34,6 +34,7 @@ git push heroku master
 ```
 
 ## Test Calls (the [test](./test) folder contains sample test calls as well) ##
+### There is also a postman collection of calls that you can directly import from [node-qkr-api-server sample postman calls collection](./node-qkr-api-server.postman_collection.json) ###
 ### Lightbox ###
 ```bash
 curl --request POST \
