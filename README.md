@@ -1,12 +1,26 @@
 # Simple Server to front Mastercard Qkr! APIs #
+
+[![bitHound Overall Score](https://www.bithound.io/github/perusworld/node-qkr-api-server/badges/score.svg)](https://www.bithound.io/github/perusworld/node-qkr-api-server)
+[![bitHound Dependencies](https://www.bithound.io/github/perusworld/node-qkr-api-server/badges/dependencies.svg)](https://www.bithound.io/github/perusworld/node-qkr-api-server/master/dependencies/npm)
+[![bitHound Code](https://www.bithound.io/github/perusworld/node-qkr-api-server/badges/code.svg)](https://www.bithound.io/github/perusworld/node-qkr-api-server)
+
+
 You could use this to host your backend services that can house calls to Mastercard Qkr! APIs.
 
 If you are looking to call Qkr! APIs directly then head over to [node-qkr-api](https://github.com/perusworld/node-qkr-api)
+
+If you are looking to build a mobile app using the server APIs then head over to [qkr-mobile-app](https://github.com/perusworld/qkr-mobile-app)
 
 You can add your API call authentication logic in [api.ts](./src/api.ts) marked by
 ```javascript
 //TODO: Your API Request Authentication Logic
 ```
+
+## Demo Video ##
+
+curl,postman calls 
+---
+[![node-qkr-api-server - Qkr API Server Demo (curl, postman)](https://img.youtube.com/vi/Bot4S__zANc/1.jpg)](https://youtu.be/Bot4S__zANc)
 
 ## Run ##
 - Bash
