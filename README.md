@@ -119,3 +119,14 @@ curl --request POST \
   --header 'content-type: application/json' \
   --data '{"token": "logintoken"}'
 ```
+### Express Checkout ###
+```diff
+- Make sure the partnerTxId is unique per call
+```
+```bash
+curl --request POST \
+  --url http://localhost:3000/api/v1/express/checkout \
+  --header 'cache-control: no-cache' \
+  --header 'content-type: application/json' \
+  --data '{"token": "---your-auth-token---","request":{"amount": "200","cardId": "c0b37d63-4c2b-4677-a956-522761914ee1","description": "some description","outletId":"155942","partnerTxId": "some tx id"}}'
+```
