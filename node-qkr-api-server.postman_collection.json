@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "node-qkr-api-server",
-		"_postman_id": "0a0e560d-449e-a228-d811-64bd928aba52",
+		"_postman_id": "0314bce3-8a25-59b3-4bce-538036193c2a",
 		"description": "node-qkr-api-server sample postman calls collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -164,6 +164,26 @@
 					"raw": "{\"token\": \"---your-auth-token---\"}"
 				},
 				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Express Checkout",
+			"request": {
+				"url": "http://localhost:3000/api/v1/express/checkout",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\": \"---your-auth-token---\",\"request\":{\"amount\": \"200\",\"cardId\": \"c0b37d63-4c2b-4677-a956-522761914ee1\",\"description\": \"some description\",\"outletId\":\"155942\",\"partnerTxId\": \"some tx id\"}}"
+				},
+				"description": "Make sure the partnerTxId is unique per call"
 			},
 			"response": []
 		}
