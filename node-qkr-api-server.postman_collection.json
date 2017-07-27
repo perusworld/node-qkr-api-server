@@ -188,6 +188,26 @@
 			"response": []
 		},
 		{
+			"name": "Address Delete",
+			"request": {
+				"url": "http://localhost:3000/api/v1/address/delete",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\": \"---your-auth-token---\",\"id\":\"---address-id---\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "Express Checkout",
 			"request": {
 				"url": "http://localhost:3000/api/v1/express/checkout",
