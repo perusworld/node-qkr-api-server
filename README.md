@@ -127,6 +127,14 @@ curl --request POST \
   --header 'content-type: application/json' \
   --data '{"token": "---your-auth-token---","request":{"city": "San Carlos","country": "US","line1": "Mastercard","line2": "959 Skyway Rd","zip": "94070","state": "CA","alias": "somealias","isDefault": "false","recipientName": "John Doe","recipientPhone":"--your-optional-phone-number--","recipientPhoneCountryCode":"1"}}'
 ```
+### Address Delete ###
+```bash
+curl --request DELETE \
+  --url http://localhost:3000/api/v1/address/delete \
+  --header 'cache-control: no-cache' \
+  --header 'content-type: application/json' \
+  --data '{"token": "logintoken", "id": "---address-id---"}'
+```
 ### Express Checkout ###
 ```diff
 - Make sure the partnerTxId is unique per call
