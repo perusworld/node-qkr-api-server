@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "node-qkr-api-server",
-		"_postman_id": "0314bce3-8a25-59b3-4bce-538036193c2a",
+		"_postman_id": "f21c72fb-d63d-f11b-34e2-7e956de5efff",
 		"description": "node-qkr-api-server sample postman calls collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -164,6 +164,26 @@
 					"raw": "{\"token\": \"---your-auth-token---\"}"
 				},
 				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Address Add",
+			"request": {
+				"url": "http://localhost:3000/api/v1/address/add",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\": \"---your-auth-token---\",\"request\":{\"city\": \"--your-city--\",\"country\": \"--your-2-digit-country-code--\",\"line1\": \"--address-one--\",\"line2\": \"--address-two--\",\"zip\": \"--your-zip--\",\"state\": \"--your-state-code--\",\"alias\": \"--your-alias--\",\"isDefault\": \"--true-or-false--\",\"recipientName\": \"--your-optional-name--\",\"recipientPhone\":\"--your-optional-phone-number--\",\"recipientPhoneCountryCode\":\"--your-optional-phone-country-code--\"}}"
+				},
+				"description": "You can omit the recipientName, recipientPhone, recipientPhoneCountryCode fields, if you do so the values that you used during registration would be used"
 			},
 			"response": []
 		},
