@@ -117,6 +117,18 @@ export class APIRoute {
     });
   }
 
+  public deleteAddress(req: Request, res: Response, next: NextFunction) {
+    this.qkrApi.deleteAddress({
+      accessToken: {
+        token: req.body.token
+      }
+    }, req.body.id).then(resp => {
+      res.json(resp);
+    }).catch(err => {
+      res.json(err);
+    });
+  }
+
   public expressCheckout(req: Request, res: Response, next: NextFunction) {
     this.qkrApi.expressPayment({
       accessToken: {
@@ -150,6 +162,7 @@ export class APIRoute {
     router.post("/product/list", this.getProducts.bind(this));
     router.post("/address/list", this.getAddresses.bind(this));
     router.post("/address/add", this.addAddress.bind(this));
+    router.delete("/address/delete", this.deleteAddress.bind(this));
     router.post("/express/checkout", this.expressCheckout.bind(this));
 
   }
