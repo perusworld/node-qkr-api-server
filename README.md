@@ -146,3 +146,11 @@ curl --request POST \
   --header 'content-type: application/json' \
   --data '{"token": "---your-auth-token---","request":{"amount": "200","cardId": "c0b37d63-4c2b-4677-a956-522761914ee1","description": "some description","outletId":"155942","partnerTxId": "some tx id"}}'
 ```
+### User Profile ###
+```bash
+curl --request POST \
+  --url http://localhost:3000/api/v1/profile \
+  --header 'cache-control: no-cache' \
+  --header 'content-type: application/json' \
+  --data '{"token": "---your-auth-token---","id":"---internalAccountId-from-authresponse---"}'
+```

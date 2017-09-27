@@ -226,6 +226,26 @@
 				"description": "Make sure the partnerTxId is unique per call"
 			},
 			"response": []
+		},
+		{
+			"name": "User Profile",
+			"request": {
+				"url": "http://localhost:3000/api/v1/profile",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\": \"---your-auth-token---\",\"id\": \"---internalAccountId-from-authresponse---\"}"
+				},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }

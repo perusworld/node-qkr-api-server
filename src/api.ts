@@ -141,6 +141,18 @@ export class APIRoute {
     });
   }
 
+  public profile(req: Request, res: Response, next: NextFunction) {
+    this.qkrApi.getUserProfile({
+      accessToken: {
+        token: req.body.token
+      }
+    }, req.body.id).then(resp => {
+      res.json(resp);
+    }).catch(err => {
+      res.json(err);
+    });
+  }
+
   /**
    * buildRoutes
    */
@@ -164,7 +176,8 @@ export class APIRoute {
     router.post("/address/add", this.addAddress.bind(this));
     router.delete("/address/delete", this.deleteAddress.bind(this));
     router.post("/express/checkout", this.expressCheckout.bind(this));
-
+    router.post("/profile", this.profile.bind(this));
+    
   }
 
 }
