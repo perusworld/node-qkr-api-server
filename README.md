@@ -47,6 +47,44 @@ heroku config:set QKR_URL="---qkr-sandbox-or-production-url---"
 git push heroku master
 ```
 
+### Enabling simple API Key based authentication ###
+- Bash
+```bash
+export QKR_PUBLIC_KEY="---qkr-public-key---"
+export QKR_PRIVATE_KEY="---qkr-private-key---"
+export QKR_URL="---qkr-sandbox-or-production-url---"
+export API_KEY_ENABLED="true"
+export API_KEY_SOURCE="request"
+export API_KEY_NAME="yourKeyName"
+export API_KEY_VALUE="yourKeyValue"
+npm run build && npm start
+```
+ - Powershell
+```powershell
+$env:QKR_PUBLIC_KEY="---qkr-public-key---"
+$env:QKR_PRIVATE_KEY="---qkr-private-key---"
+$env:QKR_URL="---qkr-sandbox-or-production-url---"
+$env:API_KEY_ENABLED="true"
+$env:API_KEY_SOURCE="request"
+$env:API_KEY_NAME="yourKeyName"
+$env:API_KEY_VALUE="yourKeyValue"
+npm run build ; npm start
+```
+-Heroku
+```bash
+heroku create yourappserver
+heroku config:set NPM_CONFIG_PRODUCTION=false
+heroku config:set QKR_PUBLIC_KEY="---qkr-public-key---"
+heroku config:set QKR_PRIVATE_KEY="---qkr-private-key---"
+heroku config:set QKR_URL="---qkr-sandbox-or-production-url---"
+heroku config:set API_KEY_ENABLED="true"
+heroku config:set API_KEY_SOURCE="request"
+heroku config:set API_KEY_NAME="yourKeyName"
+heroku config:set API_KEY_VALUE="yourKeyValue"
+git push heroku master
+```
+
+
 ## Test Calls (the [test](./test) folder contains sample test calls as well) ##
 ### There is also a postman collection of calls that you can directly import from [node-qkr-api-server sample postman calls collection](./node-qkr-api-server.postman_collection.json) ###
 ### Lightbox ###

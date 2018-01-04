@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response, Router } from "express";
-
+import * as passport from "passport";
 import { QKRApi } from "node-qkr-api";
+import { APIKeyStrategyProvider } from "passport-apikey";
 
 export class APIRoute {
 
@@ -159,11 +160,9 @@ export class APIRoute {
   public buildRoutes(router: Router) {
     console.log("[APIRoute::create] Creating api route.");
 
-    router.use((req: Request, res: Response, next: NextFunction) => {
-      //TODO: Your API Request Authentication Logic
-      next();
-    })
-
+    passport.use(APIKeyStrategyProvider.getInstance());
+    router.use(passport.authenticate('apikey', { session: false }));
+    
     router.post("/login", this.login.bind(this));
     router.post("/lightbox", this.lightbox.bind(this));
     router.post("/cart/list", this.getCarts.bind(this));
